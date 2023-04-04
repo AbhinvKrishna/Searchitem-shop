@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Like Website</title>
+    <link rel="stylesheet" href="ESearchBar.css">
+</head>
+
+<body>
+    <header>
+        <h1>Mephisto Sales</h1>
+    </header>
+    <div class="container">
+        <div class="inp">
+        <form>
+            <input type="text" id="searchItem" onkeyup="search()" placeholder="Search Products" autocomplete="off">
+        </form>
+    </div>
+        <div class="product-list" id="productlist">
+            <div class="product">
+                <img src="t1.jpg" alt="">
+                <div class="p-details">
+                    <h2>Tshirt Bucher</h2>
+                    <h3>Mrp-$22</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="b1.jpg" alt="">
+                <div class="p-details">
+                    <h2>Laviro Bags</h2>
+                    <h3>Mrp-$42</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s1.jpg" alt="">
+                <div class="p-details">
+                    <h2>Crix Sneakers</h2>
+                    <h3>Mrp-$32</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="t2.jpg" alt="">
+                <div class="p-details">
+                    <h2>Tshirt Nexa</h2>
+                    <h3>Mrp-$12</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="b2.jpg" alt="">
+                <div class="p-details">
+                    <h2>Noziro Bag</h2>
+                    <h3>Mrp-$52</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s2.jpg" alt="">
+                <div class="p-details">
+                    <h2>Jordan Sneakers</h2>
+                    <h3>Mrp-$29</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="t3.jpg" alt="">
+                <div class="p-details">
+                    <h2>Tshirt Locas</h2>
+                    <h3>Mrp-$58</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="b3.jpg" alt="">
+                <div class="p-details">
+                    <h2>Retro Bags</h2>
+                    <h3>Mrp-$229</h3>
+                </div>
+            </div>
+            <div class="product">
+                <img src="s3.jpg" alt="">
+                <div class="p-details">
+                    <h2>Qz Sneakers</h2>
+                    <h3>Mrp-$72</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let product = document.querySelectorAll('.product');
+        let headings = document.getElementsByTagName('h2');
+        1
+        function search() {
+            let findvalue = document.getElementById('searchItem').value.toUpperCase();
+            console.log(findvalue)
+
+            
+
+
+
+            for (let i = 0; i < product.length; i++) {
+             let names = product[i].getElementsByTagName('h2')[0];
+             if(names){
+                let match = names.textContent || names.innerHTML;
+                if(match.toUpperCase().indexOf(findvalue)>-1){
+                    product[i].style.display = "";
+                }
+                else{
+                    product[i].style.display = "none";
+                }
+             }
+            }
+        }
+    </script>
+</body>
+
+</html>
